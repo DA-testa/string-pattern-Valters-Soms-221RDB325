@@ -20,7 +20,8 @@ def read_input():
         return pattern, text
 
 def print_occurrences(output):
-    print(' '.join(map(str, output)))
+    if output is not None:
+        print(' '.join(map(str, output)))
 
 def hash_string(string):
     hashValue = 0
@@ -42,7 +43,7 @@ def get_occurrences(pattern, text):
         if i < m - n:
             text_hash = ((text_hash - ord(text[i]) * (128 ** (n - 1))) * 128 + ord(text[i+n])) % 257
 
-    return matches
+    print(matches)
 
 if __name__ == '__main__':
     print_occurrences(get_occurrences(*read_input()))
