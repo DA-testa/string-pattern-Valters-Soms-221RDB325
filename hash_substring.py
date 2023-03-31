@@ -1,5 +1,4 @@
 # python3
-
 def read_input():
     input_text = input()
     if 'F' in input_text:
@@ -30,7 +29,6 @@ def hash_string(string):
     return hashValue
 
 def get_occurrences(pattern, text):
-
     n = len(pattern)
     m = len(text)
     pattern_hash = hash_string(pattern)
@@ -43,11 +41,8 @@ def get_occurrences(pattern, text):
                 matches.append(i)
         if i < m - n:
             text_hash = ((text_hash - ord(text[i]) * (128 ** (n - 1))) * 128 + ord(text[i+n])) % 257
-    
-    output = print_occurrences(matches)
-    return output
 
+    return matches
 
 if __name__ == '__main__':
-    get_occurrences(*read_input())
-
+    print_occurrences(get_occurrences(*read_input()))
