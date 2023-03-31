@@ -4,12 +4,12 @@ def read_input():
     input_text = input()
     if 'F' in input_text:
         input_file = input()
-        input_file = "test/" + input_file
+        input_file = "tests/" + input_file
         if 'a' not in input_file:
             try:
                 with open(input_file, "r") as f:
-                    pattern = f.readline()
-                    text = f.readline()
+                    pattern = f.readline().rstrip()
+                    text = f.readline().rstrip()
                     return pattern, text
 
             except FileNotFoundError:
@@ -21,7 +21,7 @@ def read_input():
         return pattern, text
 
 def print_occurrences(output):
-    print(' '.join(map(str, output)))
+    return print(' '.join(map(str, output)))
 
 def hash_string(string):
     hashValue = 0
