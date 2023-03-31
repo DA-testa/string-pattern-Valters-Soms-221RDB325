@@ -43,7 +43,8 @@ def get_occurrences(pattern, text):
                 matches.append(i)
         if i < m - n:
             text_hash = ((text_hash - ord(text[i]) * (128 ** (n - 1))) * 128 + ord(text[i+n])) % 257
-    print_occurrences(matches)
+    
+    return print_occurrences(matches)
 
 
 if __name__ == '__main__':
