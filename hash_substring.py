@@ -2,21 +2,24 @@ def read_input():
     input_text = input().upper().rstrip()
     if 'F' in input_text:
         input_file = input()
-        input_file = "tests/" + input_file
+        input_file = "tests" + input_file
         if 'a' not in input_file:
             try:
                 with open(input_file, "r") as f:
                     pattern = f.readline().rstrip()
                     text = f.readline().rstrip()
-                return pattern, text
+                    return pattern, text
 
             except FileNotFoundError:
-                return print("File_not_found_error")
+                return "File not found error"
 
-    if 'I' in input_text:
+    elif 'I' in input_text:
         pattern = input()
         text = input()
         return pattern, text
+    
+    else:
+        return "Huh?"
 
 def print_occurrences(output):
     print(' '.join(map(str, output)))
