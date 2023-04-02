@@ -2,7 +2,7 @@ def read_input():
     input_format = input().upper().rstrip()
     if 'F' in input_format:
         input_file = input()
-        input_file = "tests" + input_file
+        input_file = "tests/" + input_file
         if 'a' not in input_file:
             try:
                 with open(input_file, "r") as f:
