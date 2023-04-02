@@ -1,6 +1,6 @@
 def read_input():
-    input_text = input().upper().rstrip()
-    if 'F' in input_text:
+    input_format = input().upper().rstrip()
+    if 'F' in input_format:
         input_file = input()
         input_file = "tests" + input_file
         if 'a' not in input_file:
@@ -8,18 +8,15 @@ def read_input():
                 with open(input_file, "r") as f:
                     pattern = f.readline().rstrip()
                     text = f.readline().rstrip()
-                    return pattern, text
-
             except FileNotFoundError:
                 return "File not found error"
 
-    elif 'I' in input_text:
-        pattern = input()
-        text = input()
-        return pattern, text
-    
-    else:
-        return "Huh?"
+    elif input_format == 'I':
+        pattern = input().rstrip()
+        text = input().rstrip()
+
+    return pattern, text
+
 
 def print_occurrences(output):
     print(' '.join(map(str, output)))
