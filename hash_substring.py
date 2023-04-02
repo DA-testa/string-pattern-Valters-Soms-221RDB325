@@ -8,7 +8,7 @@ def read_input():
                 with open(input_file, "r") as f:
                     pattern = f.readline().rstrip()
                     text = f.readline().rstrip()
-                    return pattern, text
+                return pattern, text
 
             except FileNotFoundError:
                 return print("File_not_found_error")
